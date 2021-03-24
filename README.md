@@ -17,6 +17,8 @@ Instructions about setting up the project.
 * proxies.txt
 * meaningless.txt (the names of the account(s))
 
+The text files must be in the built directory!
+
 ### NuGet Packages
 
 * 2CaptchaAPI
