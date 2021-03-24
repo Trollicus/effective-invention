@@ -34,3 +34,10 @@ dotnet build
 ## Contact
 
 * Discord: Trollicus#0002
+
+
+## Credits
+Special Thanks to
+* Project Cocaine( for helping me making this awesome project )
+* Trollicus(me)
+* 2CaptchaAPI
