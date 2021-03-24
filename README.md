@@ -8,6 +8,9 @@ Simple made discord account generator, which uses proxies, randomised mails and 
 ## Setup
 
 * Download .NET 5.0
+* Create 2Captcha Account and put some funds
+* Add Newtonsoft.Json & 2CaptchaAPI
+* Create in the built directory mails,meaningless(names for the accounts),proxies text files.
 ```
 dotnet build
 ```
