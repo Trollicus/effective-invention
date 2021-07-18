@@ -1,5 +1,6 @@
 ## Discord Account Generator
 Simple made discord account generator, which uses proxies, randomised mails and names, has x-fingerprint and it uses 2captcha(required).
+30 stars => Improved version
 
 The Project has educational purposes, use it at your own risk!
 
