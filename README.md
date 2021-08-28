@@ -1,6 +1,5 @@
 ## Discord Account Generator
-Simple made discord account generator, which uses proxies, randomised mails and names, has x-fingerprint and it uses 2captcha(required).
-30 stars => Improved version(4 stars left)
+Advanced Discord Account Creator that uses 2Captcha
 
 
 The Project has educational purposes, use it at your own risk!
@@ -15,11 +14,11 @@ Instructions about setting up the project.
 
 ### Requirements
 
-* .NET 5.0
+* .NET Framework 4.8
 * 2Captcha account with funds
 * mails.txt
 * proxies.txt
-* meaningless.txt (the names of the account(s))
+* onlinesim.ru account with funds(only if you want phone verification)
 
 The text files must be in the built directory!
 
@@ -27,6 +26,7 @@ The text files must be in the built directory!
 
 * 2CaptchaAPI
 * Newtonsoft.Json
+* RestSharp
 
 ### Build
 
@@ -35,13 +35,3 @@ Via opening CMD in the project directory simply type
 ```
 dotnet build
 ```
-## Contact
-
-* Discord: Trollicus#0002
-
-
-## Credits
-Special Thanks to
-* Project Cocaine( for helping me making this awesome project )
-* Trollicus(me)
-* 2CaptchaAPI
