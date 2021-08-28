@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -98,7 +98,7 @@ namespace DiscordAccountGenerator2
                 string json = "{ \"fingerprint\": \"" + discord.fingerprint + "\", \"email\": \"" +
                               mails[random.Next(mails.Count)] + "\", \"username\": \"" + RandomString(8) +
                               "\", \"password\": \"SOMERANDOMPASSWORD123F\", \"invite\": \"null\", \"consent\":\"true\",\"date_of_birth\":\"2000-12-01\",\"gift_code_sku_id\":\"null\",\"captcha_key\":\"" +
-                              new _2Captcha("your2captchaKey")
+                              new _2Captcha("7e3b92f0e2cfc6dc39de3bfeb0ba137d")
                       .SolveHCaptcha("f5561ba9-8f1e-40ca-9b5b-a0b3f719ef34", "https://discord.com").Result
                       .Response + "\"}";
 
@@ -112,7 +112,7 @@ namespace DiscordAccountGenerator2
 
                 #region Generate Phone
 
-                var GeneratePhone = new RestClient("https://onlinesim.ru/api/getNum.php?apikey=YOUR_KEY&service=discord");
+                var GeneratePhone = new RestClient("https://onlinesim.ru/api/getNum.php?apikey=23701c3ae7f2d6a29e55721b1742cbbd&service=discord");
                 var GenPhoneRequest = new RestRequest();
                 GenPhoneRequest.Method = Method.GET;
                 var GenPhoneResponse = GeneratePhone.Execute(GenPhoneRequest); 
@@ -124,7 +124,7 @@ namespace DiscordAccountGenerator2
                 #region Get Phone Number
 
                 var _client =
-                    new RestClient("https://onlinesim.ru/api/getState.php?apikey=YOUR_KEY");
+                    new RestClient("https://onlinesim.ru/api/getState.php?apikey=23701c3ae7f2d6a29e55721b1742cbbd");
 
                 var _request = new RestRequest();
                 _request.Method = Method.GET;
@@ -189,7 +189,7 @@ namespace DiscordAccountGenerator2
             Thread.Sleep(5000);
             
             var _client1 =
-                new RestClient("https://onlinesim.ru/api/getState.php?apikey=YOUR_KEY");
+                new RestClient("https://onlinesim.ru/api/getState.php?apikey=23701c3ae7f2d6a29e55721b1742cbbd");
 
             var _request1 = new RestRequest();
             _request1.Method = Method.GET;
