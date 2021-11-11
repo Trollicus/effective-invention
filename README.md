@@ -1,6 +1,7 @@
 ## Discord Account Generator
 Advanced Discord Account Creator that uses 2Captcha
 
+goal: 50 stars = massive update, fixes and improvements.
 
 The Project has educational purposes, use it at your own risk!
 
