@@ -1,9 +1,7 @@
 ## Discord Account Generator
-Advanced Discord Account Creator that uses 2Captcha
+Advanced Discord Account Creator that uses Anti-Captcha
 
-goal: 50 stars = massive update, fixes and improvements.
-
-The Project has educational purposes, use it at your own risk!
+The Project is made with educational purposes, use it at your own risk!
 
 ## Showcase
 
@@ -16,18 +14,15 @@ Instructions about setting up the project.
 ### Requirements
 
 * .NET Framework 4.8
-* 2Captcha account with funds
+* Anti-Captcha account with funds
 * mails.txt
-* proxies.txt
-* onlinesim.ru account with funds(only if you want phone verification)
 
 The text files must be in the built directory!
 
 ### NuGet Packages
 
-* 2CaptchaAPI
-* Newtonsoft.Json
-* RestSharp
+* [AntiCaptchaAPI](https://github.com/Zaczero/AntiCaptcha) Simple HTTP API Wrapper for Anti-Captcha.com
+* [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/) Json.NET is a popular high-performance JSON framework for .NET
 
 ### Build
 
@@ -36,3 +31,12 @@ Via opening CMD in the project directory simply type
 ```
 dotnet build
 ```
+
+###ToDo List:
+
+- [ ] Multi-Threading
+- [ ] Own API for Anti-Captcha
+- [ ] Join server upoon creation
+- [ ] Randomised User-Agent
+- [ ] Get E-Mails
+- [ ] Save tokens to file
