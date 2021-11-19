@@ -3,6 +3,8 @@ Advanced Discord Account Creator that uses Anti-Captcha
 
 The Project is made with educational purposes, use it at your own risk!
 
+[![Build status](https://ci.appveyor.com/api/projects/status/xhger5d5qm3wl4xb?svg=true)](https://ci.appveyor.com/project/Trollicus/effective-invention-pvwgq)
+
 ## Showcase
 
 ![firstone](https://gyazo.com/cdb54c2870e43dd0c03ae9dd63565a99.gif)
