@@ -40,3 +40,4 @@ dotnet build
 - [ ] Randomised User-Agent
 - [ ] Get E-Mails
 - [ ] Save tokens to file
+- [ ] Safely Creating accounts without them being disabled(expect soon update)
