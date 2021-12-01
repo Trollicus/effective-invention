@@ -41,3 +41,5 @@ dotnet build
 - [ ] Get E-Mails
 - [ ] Save tokens to file
 - [ ] Safely Creating accounts without them being disabled(expect soon update)
+- [ ] Verify E-Mail
+- [ ] Verify Phone Number
