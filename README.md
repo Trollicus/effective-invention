@@ -36,7 +36,7 @@ dotnet build
 
 - [ ] Multi-Threading
 - [ ] Own API for Anti-Captcha
-- [ ] Join server upoon creation
+- [X] Join server upoon creation
 - [ ] Randomised User-Agent
 - [ ] Get E-Mails
 - [ ] Save tokens to file
