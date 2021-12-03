@@ -38,7 +38,7 @@ dotnet build
 - [ ] Own API for Anti-Captcha
 - [X] Join server upoon creation
 - [ ] Randomised User-Agent
-- [ ] Get E-Mails
+- [X] Get E-Mails
 - [ ] Save tokens to file
 - [ ] Safely Creating accounts without them being disabled(expect soon update)
 - [ ] Verify E-Mail
