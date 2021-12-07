@@ -43,3 +43,4 @@ dotnet build
 - [ ] Safely Creating accounts without them being disabled(expect soon update)
 - [ ] Verify E-Mail
 - [ ] Verify Phone Number
+- [ ] Move to .NET 6
