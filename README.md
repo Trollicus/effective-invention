@@ -44,3 +44,4 @@ dotnet build
 - [ ] Verify E-Mail
 - [ ] Verify Phone Number
 - [ ] Move to .NET 6
+- [ ] Implement Mail.TM API
