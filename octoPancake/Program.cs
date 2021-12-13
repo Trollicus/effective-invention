@@ -25,11 +25,30 @@ namespace octoPancake
         {
             [JsonProperty("fingerprint")] public string Fingerprint { get; set; }
         }
+        
+        private static string Token { get; set; }
 
         private static readonly HttpClientHandler Handler = new HttpClientHandler();
         
         private static readonly HttpClient Client = new HttpClient(Handler);
+        
+        /// <summary>
+        /// Asynchronous HTTP Request
+        /// </summary>
+        /// <param name="uri">URI Requested to</param>
+        /// <param name="method">HTTPMethod</param>
+        /// <returns>The task object representing the asynchronous operation</returns>
+        private static async Task<HttpResponseMessage> PostAsync(string uri, HttpMethod method)
+        {
+            var request = new HttpRequestMessage
+            {
+                RequestUri = new Uri(uri),
+                Method = method,
+            };
 
+            return await Client.SendAsync(request);
+        }
+        
         /// <summary>
         ///  The Method represents asynchronous Http Request 
         /// </summary>
@@ -40,7 +59,7 @@ namespace octoPancake
         /// <returns>The task object representing the asynchronous operation</returns>
         [DebuggerStepThrough]
         private static async Task<HttpResponseMessage> PostAsync(string uri, HttpMethod method,
-            string json, IDictionary<string, string> headers)
+            string json, IDictionary<string, string> headers = null)
         {
             var request = new HttpRequestMessage
             {
@@ -73,25 +92,40 @@ namespace octoPancake
         
         private static async Task<string> Captcha()
         {
-            var captcha = new AntiCaptcha("YOUR_ANTI_CAPTCHA_KEY");
+            var captcha = new AntiCaptcha("dac21af79cf750cab493939e920bed00");
             var funCaptcha =
                 await captcha.SolveHCaptcha("f5561ba9-8f1e-40ca-9b5b-a0b3f719ef34", "https://discord.com");
 
             return funCaptcha.Response;
         }
+        
+        private static readonly string Up = $"{{\"address\": \"{RandomString(8)}@{GetDomain().Result}\", \"password\": \"{RandomString(4)}\"}}";
+        
+        private static async Task<string> GetDomain()
+        {
+            var response = await PostAsync("https://api.mail.tm/domains?page=1", HttpMethod.Get);
+            
+            var deserialize = JsonConvert.DeserializeObject<ResponseJson.Root>(await response.Content.ReadAsStringAsync());
 
+            return deserialize!.HydraMember[0].domain;
+        }
+        
+        private static async Task<string> CreateMail()
+        {
+            var response = await PostAsync("https://api.mail.tm/accounts", HttpMethod.Post, Up);
+
+            var deserialize = JsonConvert.DeserializeObject<CreateMailJson>(await response.Content.ReadAsStringAsync());
+            
+            return deserialize!.address;
+        }
+
+        //TODO: Cleaner code
 
         public static async Task Main()
         {
-            if (!File.Exists(Directory.GetCurrentDirectory() + "\\mails.txt"))
-                File.Create("mails.txt").Dispose();
-
-            if (new FileInfo(Directory.GetCurrentDirectory() + "\\mails.txt").Length == 0)
-                Console.WriteLine("[!] You do not have e-mails");
             
-                
-            
-            const string proxy = "";
+            // ReSharper disable once UnusedVariable
+            const string proxy = ""; 
 
             using var wb = new WebClient();
 
@@ -101,7 +135,7 @@ namespace octoPancake
 #endif
 
 
-            var fingerPrint = wb.DownloadString("https://discordapp.com/api/v9/experiments");
+            var fingerPrint = wb.DownloadString("https://discord.com/api/v9/experiments");
 
             var data = JsonConvert.DeserializeObject<Discord>(fingerPrint);
 
@@ -109,7 +143,7 @@ namespace octoPancake
             var list = new Dictionary<string, string>
             {
                 {
-                    "x-fingerprint",
+                    "X-Fingerprint",
                     data?.Fingerprint
                 },
                 {
@@ -117,20 +151,16 @@ namespace octoPancake
                     "application/json"
                 },
                 {
-                    "referer",
+                    "Referer",
                     "https://discord.com/register"
                 },
                 {
-                    "x-super-properties",
+                    "X-Super-Properties",
                     Base64Encode(
-                        "{\"os\":\"Windows\",\"browser\":\"Chrome\",\"device\":\"\",\"system_locale\":\"en-US\",\"browser_user_agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36\",\"browser_version\":\"94.0\",\"os_version\":\"60\",\"referrer\":\"\",\"referring_domain\":\"\",\"referrer_current\":\"\",\"referring_domain_current\":\"\",\"release_channel\":\"stable\",\"client_build_number\":105304,\"client_event_source\":null}")
+                        "{\"os\":\"Linux\",\"browser\":\"\",\"device\":\"\",\"system_locale\":\"en-GB\",\"browser_user_agent\":\"Links (2.3pre1; Linux 2.6.38-8-generic x86_64; 170x48)\",\"browser_version\":\"\",\"os_version\":\"2.6.38\",\"referrer\":\"\",\"referring_domain\":\"\",\"referrer_current\":\"\",\"referring_domain_current\":\"\",\"release_channel\":\"stable\",\"client_build_number\":107116,\"client_event_source\":null}")
                 },
                 {
-                    "authority",
-                    "https://discord.com"
-                },
-                {
-                    "origin",
+                    "Origin",
                     "https://discord.com"
                 },
                 {
@@ -144,23 +174,55 @@ namespace octoPancake
                 {
                     "sec-fetch-dest",
                     "empty"
+                },
+                {
+                    "X-Debug-Options",
+                    "bugReporterEnabled"
+                },
+                {
+                    "X-Discord-Locale",
+                    "en-GB"
+                },
+                {
+                    "User-Agent",
+                    "Links (2.3pre1; Linux 2.6.38-8-generic x86_64; 170x48)"
                 }
             };
 
             var password = RandomString(8);
             
             Console.WriteLine($"Your account password: {password}");
+
+
+            var mail = CreateMail().Result;
             
-            var mails =
-                new List<string>(File.ReadAllLines(Directory.GetCurrentDirectory() + "\\mails.txt"));
-            
-            var index = Random.Next(mails.Count);
-            
-            var response = await PostAsync("https://discordapp.com/api/v9/auth/register", HttpMethod.Post,
-                $"{{\"fingerprint\": \"{data?.Fingerprint}\", \"email\": \"{mails[index]}\", \"password\": \"{password}\", \"username\": \"Doogsy\", \"consent\": \"true\", \"date_of_birth\": \"2000-12-01\", \"captcha_key\": \"{Captcha().Result}\", \"invite\": \"null\", \"promotional_email_opt_in\":\"false\"}}",
+            var response = await PostAsync("https://discord.com/api/v9/auth/register", HttpMethod.Post,
+                $"{{\"fingerprint\": \"{data?.Fingerprint}\", \"email\": \"{mail}\", \"password\": \"{password}\", \"username\": \"TomnyHehue\", \"consent\": \"true\", \"date_of_birth\": \"1998-12-01\", \"captcha_key\": \"{Captcha().Result}\", \"invite\": \"null\", \"gift_code_sku_id\":\"null\"}}",
                 list);
 
-            Console.WriteLine(await response.Content.ReadAsStringAsync());
+            Token = await response.Content.ReadAsStringAsync();
+            
+            Console.WriteLine(Token);
+
+
+            string path = Directory.GetCurrentDirectory() + "\\tokens.txt";
+            
+            if (!File.Exists(path))
+                File.Create("tokens.txt").Dispose();
+            
+            using (var outputFile = new StreamWriter(path))
+            {
+                await outputFile.WriteLineAsync(Token + Environment.NewLine);
+            }
+            
+            //TODO: Begin verification
+            
+            //Verify e-mail: expected in week and a half.
+            
+            //Reset Password 
+            
+            //Verify Phone number
+            
             Console.ReadLine();
         }
     }
