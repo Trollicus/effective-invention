@@ -92,7 +92,7 @@ namespace octoPancake
         
         private static async Task<string> Captcha()
         {
-            var captcha = new AntiCaptcha("dac21af79cf750cab493939e920bed00");
+            var captcha = new AntiCaptcha("YOUR_ANTICAPTCHA_KEY");
             var funCaptcha =
                 await captcha.SolveHCaptcha("f5561ba9-8f1e-40ca-9b5b-a0b3f719ef34", "https://discord.com");
 
