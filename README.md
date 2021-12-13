@@ -15,7 +15,6 @@ Instructions about setting up the project.
 
 * .NET Framework 4.8
 * Anti-Captcha account with funds
-* mails.txt
 
 The text files must be in the built directory!
 
@@ -39,9 +38,9 @@ dotnet build
 - [X] Join server upoon creation
 - [ ] Randomised User-Agent
 - [X] Get E-Mails
-- [ ] Save tokens to file
+- [X] Save tokens to file
 - [ ] Safely Creating accounts without them being disabled(expect soon update)
 - [ ] Verify E-Mail
 - [ ] Verify Phone Number
 - [ ] Move to .NET 6
-- [ ] Implement Mail.TM API
+- [X] Implement Mail.TM API
