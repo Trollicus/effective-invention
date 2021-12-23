@@ -31,7 +31,7 @@ Via opening CMD in the project directory simply type
 dotnet build
 ```
 
-![](https://i.gyazo.com/2d930f1b54be3617ae59dea38157c221.mp4)
+https://user-images.githubusercontent.com/40140975/147256936-ff0f518d-2002-45ff-93ae-a78c39419109.mp4
 
 ### ToDo List:
 
