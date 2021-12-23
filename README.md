@@ -31,6 +31,8 @@ Via opening CMD in the project directory simply type
 dotnet build
 ```
 
+![](https://i.gyazo.com/2d930f1b54be3617ae59dea38157c221.mp4)
+
 ### ToDo List:
 
 - [ ] Multi-Threading
