@@ -1,6 +1,9 @@
 ## Discord Account Generator
 Advanced Discord Account Creator that uses Anti-Captcha
 
+
+55 stars = update 
+
 The Project is made with educational purposes, use it at your own risk!
 
 ## Showcase
