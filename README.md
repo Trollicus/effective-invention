@@ -2,8 +2,6 @@
 Advanced Discord Account Creator that uses Anti-Captcha
 
 
-55 stars = update 
-
 The Project is made with educational purposes, use it at your own risk!
 
 ## Showcase
@@ -42,10 +40,9 @@ https://user-images.githubusercontent.com/40140975/147256936-ff0f518d-2002-45ff-
 - [ ] Own API for Anti-Captcha
 - [X] Join server upoon creation
 - [ ] Randomised User-Agent
-- [X] Get E-Mails
+- [] Get E-Mails (apparently discord don't like Mail.TM)
 - [X] Save tokens to file
 - [ ] Safely Creating accounts without them being disabled(expect soon update)
 - [ ] Verify E-Mail
 - [ ] Verify Phone Number
 - [ ] Move to .NET 6
-- [X] Implement Mail.TM API
