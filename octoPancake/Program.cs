@@ -94,31 +94,12 @@ namespace octoPancake
         {
             var captcha = new AntiCaptcha("YOUR_ANTICAPTCHA_KEY");
             var funCaptcha =
-                await captcha.SolveHCaptcha("f5561ba9-8f1e-40ca-9b5b-a0b3f719ef34", "https://discord.com");
+                await captcha.SolveHCaptcha("4c672d35-0701-42b2-88c3-78380b0db560", "https://discord.com");
 
             return funCaptcha.Response;
         }
         
-        private static readonly string Up = $"{{\"address\": \"{RandomString(8)}@{GetDomain().Result}\", \"password\": \"{RandomString(4)}\"}}";
-        
-        private static async Task<string> GetDomain()
-        {
-            var response = await PostAsync("https://api.mail.tm/domains?page=1", HttpMethod.Get);
-            
-            var deserialize = JsonConvert.DeserializeObject<ResponseJson.Root>(await response.Content.ReadAsStringAsync());
-
-            return deserialize!.HydraMember[0].domain;
-        }
-        
-        private static async Task<string> CreateMail()
-        {
-            var response = await PostAsync("https://api.mail.tm/accounts", HttpMethod.Post, Up);
-
-            var deserialize = JsonConvert.DeserializeObject<CreateMailJson>(await response.Content.ReadAsStringAsync());
-            
-            return deserialize!.address;
-        }
-
+       
         //TODO: Cleaner code
 
         public static async Task Main()
@@ -140,7 +121,7 @@ namespace octoPancake
             var data = JsonConvert.DeserializeObject<Discord>(fingerPrint);
 
 
-            var list = new Dictionary<string, string>
+             var list = new Dictionary<string, string>
             {
                 {
                     "X-Fingerprint",
@@ -157,23 +138,11 @@ namespace octoPancake
                 {
                     "X-Super-Properties",
                     Base64Encode(
-                        "{\"os\":\"Linux\",\"browser\":\"\",\"device\":\"\",\"system_locale\":\"en-GB\",\"browser_user_agent\":\"Links (2.3pre1; Linux 2.6.38-8-generic x86_64; 170x48)\",\"browser_version\":\"\",\"os_version\":\"2.6.38\",\"referrer\":\"\",\"referring_domain\":\"\",\"referrer_current\":\"\",\"referring_domain_current\":\"\",\"release_channel\":\"stable\",\"client_build_number\":107116,\"client_event_source\":null}")
+                        "{\"os\":\"Linux\",\"browser\":\"\",\"device\":\"\",\"system_locale\":\"en-US\",\"browser_user_agent\":\"Links (2.3pre1; Linux 2.6.38-8-generic x86_64; 170x48)\",\"browser_version\":\"\",\"os_version\":\"2.6.38\",\"referrer\":\"\",\"referring_domain\":\"\",\"referrer_current\":\"\",\"referring_domain_current\":\"\",\"release_channel\":\"stable\",\"client_build_number\":121017,\"client_event_source\":null}")
                 },
                 {
                     "Origin",
                     "https://discord.com"
-                },
-                {
-                    "sec-fetch-site",
-                    "same-origin"
-                },
-                {
-                    "sec-fetch-mode",
-                    "cors"
-                },
-                {
-                    "sec-fetch-dest",
-                    "empty"
                 },
                 {
                     "X-Debug-Options",
@@ -181,7 +150,7 @@ namespace octoPancake
                 },
                 {
                     "X-Discord-Locale",
-                    "en-GB"
+                    "en-US"
                 },
                 {
                     "User-Agent",
@@ -193,11 +162,8 @@ namespace octoPancake
             
             Console.WriteLine($"Your account password: {password}");
 
-
-            var mail = CreateMail().Result;
-            
             var response = await PostAsync("https://discord.com/api/v9/auth/register", HttpMethod.Post,
-                $"{{\"fingerprint\": \"{data?.Fingerprint}\", \"email\": \"{mail}\", \"password\": \"{password}\", \"username\": \"TomnyHehue\", \"consent\": \"true\", \"date_of_birth\": \"1998-12-01\", \"captcha_key\": \"{Captcha().Result}\", \"invite\": \"null\", \"gift_code_sku_id\":\"null\"}}",
+                $"{{\"fingerprint\": \"{data?.Fingerprint}\", \"email\": \"YOUR-EMAIL-HERE\", \"password\": \"{password}\", \"username\": \"DoubtYuo\", \"consent\": \"true\", \"date_of_birth\": \"1999-11-02\", \"captcha_key\": \"{Captcha().Result}\", \"invite\": \"null\", \"gift_code_sku_id\":\"null\"}}",
                 list);
 
             Token = await response.Content.ReadAsStringAsync();
