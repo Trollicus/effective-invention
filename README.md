@@ -4,6 +4,8 @@ Advanced Discord Account Creator that uses Anti-Captcha
 
 The Project is made with educational purposes, use it at your own risk!
 
+~ 13 May 2022 😎
+
 ## Showcase
 
 ![firstone](https://gyazo.com/cdb54c2870e43dd0c03ae9dd63565a99.gif)
