@@ -1,0 +1,15 @@
+C:\Users\yorda\RiderProjects\SupremeSystem\SupremeSystem\bin\Debug\net6.0\SupremeSystem.exe
+C:\Users\yorda\RiderProjects\SupremeSystem\SupremeSystem\bin\Debug\net6.0\SupremeSystem.deps.json
+C:\Users\yorda\RiderProjects\SupremeSystem\SupremeSystem\bin\Debug\net6.0\SupremeSystem.runtimeconfig.json
+C:\Users\yorda\RiderProjects\SupremeSystem\SupremeSystem\bin\Debug\net6.0\SupremeSystem.dll
+C:\Users\yorda\RiderProjects\SupremeSystem\SupremeSystem\bin\Debug\net6.0\ref\SupremeSystem.dll
+C:\Users\yorda\RiderProjects\SupremeSystem\SupremeSystem\bin\Debug\net6.0\SupremeSystem.pdb
+C:\Users\yorda\RiderProjects\SupremeSystem\SupremeSystem\obj\Debug\net6.0\SupremeSystem.csproj.AssemblyReference.cache
+C:\Users\yorda\RiderProjects\SupremeSystem\SupremeSystem\obj\Debug\net6.0\SupremeSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yorda\RiderProjects\SupremeSystem\SupremeSystem\obj\Debug\net6.0\SupremeSystem.AssemblyInfoInputs.cache
+C:\Users\yorda\RiderProjects\SupremeSystem\SupremeSystem\obj\Debug\net6.0\SupremeSystem.AssemblyInfo.cs
+C:\Users\yorda\RiderProjects\SupremeSystem\SupremeSystem\obj\Debug\net6.0\SupremeSystem.csproj.CoreCompileInputs.cache
+C:\Users\yorda\RiderProjects\SupremeSystem\SupremeSystem\obj\Debug\net6.0\SupremeSystem.dll
+C:\Users\yorda\RiderProjects\SupremeSystem\SupremeSystem\obj\Debug\net6.0\ref\SupremeSystem.dll
+C:\Users\yorda\RiderProjects\SupremeSystem\SupremeSystem\obj\Debug\net6.0\SupremeSystem.pdb
+C:\Users\yorda\RiderProjects\SupremeSystem\SupremeSystem\obj\Debug\net6.0\SupremeSystem.genruntimeconfig.cache
