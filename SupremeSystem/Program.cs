@@ -5,7 +5,7 @@ var response = await PostAsync("https://discord.com/api/v9/auth/register", HttpM
         new IHttpHandler.RequestHeadersEx("X-Fingerprint", FingerPrint().Result),
         new IHttpHandler.RequestHeadersEx("X-Super-Properties",
             Base64Encode(
-                "{\"os\":\"Windows\",\"browser\":\"Firefox\",\"device\":\"\",\"system_locale\":\"en-US\",\"browser_user_agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:103.0) Gecko/20100101 Firefox/103.0\",\"browser_version\":\"103.0\",\"os_version\":\"10\",\"referrer\":\"\",\"referring_domain\":\"\",\"search_engine\":\"bin\",\"referrer_current\":\"\",\"referring_domain_current\":\"\",\"release_channel\":\"stable\",\"client_build_number\":\"139968\",\"client_event_source\":null}")),
+                "{\"os\":\"Windows\",\"browser\":\"Firefox\",\"device\":\"\",\"system_locale\":\"en-US\",\"browser_user_agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:103.0) Gecko/20100101 Firefox/103.0\",\"browser_version\":\"103.0\",\"os_version\":\"10\",\"referrer\":\"\",\"referring_domain\":\"\",\"search_engine\":\"bin\",\"referrer_current\":\"\",\"referring_domain_current\":\"\",\"release_channel\":\"stable\",\"client_build_number\":\"140242\",\"client_event_source\":null}")),
         new IHttpHandler.RequestHeadersEx("Referer", "https://discord.com/register"),
         new IHttpHandler.RequestHeadersEx("Origin", "https://discord.com"),
         new IHttpHandler.RequestHeadersEx("User-Agent", UserAgent),
