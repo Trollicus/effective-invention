@@ -5,6 +5,7 @@ High quality Discord account Generator
 
 Built with Educational Purposes.
 
+70 stars = huge update (the world's fastest gen!)
 
 ## Demonstration
 
