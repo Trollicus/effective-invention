@@ -17,7 +17,13 @@ Instructions about setting up the project.
 * Anti-Captcha account with funds
 
 
-### Build
+### Build & Restore
+
+Restore the nugget packages
+
+```
+dotnet restore
+```
 
 Via opening CMD in the project directory simply type
 
