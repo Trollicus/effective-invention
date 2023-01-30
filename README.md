@@ -13,7 +13,7 @@ Instructions about setting up the project.
 
 ### Requirements
 
-* .NET 6
+* .NET 7
 * Anti-Captcha account with funds
 
 
