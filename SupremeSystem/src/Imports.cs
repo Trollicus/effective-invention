@@ -1,0 +1,18 @@
+﻿global using System.Net.Http;
+global using System.Threading.Tasks;
+global using System.Net.Http.Headers;
+global using static SupremeSystem.Handlers.HttpHandler;
+global using SupremeSystem.Handlers;
+global using System.Text;
+global using System.Text.Json;
+global using static SupremeSystem.MailTM.Mail;
+global using System.Text.Json.Serialization;
+global using static SupremeSystem.Captcha.Settings;
+global using static SupremeSystem.Captcha.AntiCaptcha.Json;
+global using static SupremeSystem.Captcha.AntiCaptcha.AntiCaptcha;
+global using static SupremeSystem.Features.Friends;
+global using static SupremeSystem.Features.Join;
+global using System.Net;
+global using SupremeSystem.Discord;
+global using static SupremeSystem.Captcha.Urls;
+global using static SupremeSystem.Discord.Features.BuildNumber;
