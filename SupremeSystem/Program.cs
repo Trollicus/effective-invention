@@ -1,5 +1,5 @@
 ﻿var response = await PostAsync("https://discord.com/api/v9/auth/register", HttpMethod.Post,
-    $"{{\"fingerprint\": \"{await FingerPrint()}\", \"email\": \"{await CreateMail()}\", \"password\": \"{RandomString(13)}\", \"username\": \"UnrealContent\", \"consent\": true, \"date_of_birth\": \"1999-12-07\", \"captcha_key\": null, \"invite\": \"pXUUXxZk\", \"gift_code_sku_id\":null, \"promotional_email_opt_in\": false}}",
+    $"{{\"fingerprint\": \"{await FingerPrint()}\", \"email\": \"{await CreateMail()}\", \"password\": \"{RandomString(10)}\", \"username\": \"GorgTheBOlen\", \"global_name\":\"bolenHEBI\", \"unique_username_registration\": true, \"consent\": true, \"date_of_birth\": \"2005-03-13\", \"invite\": \"\", \"gift_code_sku_id\":null, \"promotional_email_opt_in\": false}}",
     new[]
     {
         new RequestHeadersEx("X-Fingerprint", await FingerPrint()),
