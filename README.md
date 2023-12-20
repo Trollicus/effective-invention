@@ -5,6 +5,8 @@ High quality Discord account Generator
 
 Built with Educational Purposes.
 
+perhaps update soon?
+
 ## Demonstration
 
 ## Getting Started
