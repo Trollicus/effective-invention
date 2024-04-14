@@ -7,6 +7,8 @@ Built with Educational Purposes.
 
 perhaps update soon?
 
+if i graduate i'll update it i promise ( next month )
+
 ## Demonstration
 
 ## Getting Started
